@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Vairas.UserManagement.Tests/Vairas.UserManagement.Tests.csproj" />
+  <Project Path="Vairas.UserManagement.Business/Vairas.UserManagement.Business.csproj" />
+  <Project Path="Vairas.UserManagement.Domain/Vairas.UserManagement.Domain.csproj" />
+  <Project Path="Vairas.UserManagement.Persistance/Vairas.UserManagement.Persistance.csproj" />
+  <Project Path="Vairas.UserManagement/Vairas.UserManagement.csproj" />
+</Solution>

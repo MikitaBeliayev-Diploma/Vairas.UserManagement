@@ -1,0 +1,130 @@
+@baseUrl = http://localhost:5151
+@userToken = REPLACE_WITH_AUTH_USER_JWT
+@workloadToken = REPLACE_WITH_WORKLOAD_JWT_WITH_REQUIRED_SCOPE
+@operatorToken = REPLACE_WITH_PLATFORM_OPERATOR_USER_JWT
+@userId = 10000000-0000-0000-0000-000000000001
+@profileId = 20000000-0000-0000-0000-000000000001
+@schoolId = 30000000-0000-0000-0000-000000000001
+@invitationId = 40000000-0000-0000-0000-000000000001
+@confirmationId = 50000000-0000-0000-0000-000000000001
+
+### Create own profile. Reuse THIS key and body for a retry.
+POST {{baseUrl}}/api/v1/users/me
+Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000001
+Content-Type: application/json
+
+{"firstName":"Synthetic","lastName":"User","emailAddress":null,"phoneNumber":null}
+
+### Read own profile and current revision
+GET {{baseUrl}}/api/v1/users/me
+Authorization: Bearer {{userToken}}
+
+### Replace contact data at the expected revision
+PUT {{baseUrl}}/api/v1/users/me
+Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000002
+Content-Type: application/json
+
+{"firstName":"Synthetic","lastName":"User","emailAddress":"synthetic@example.invalid","phoneNumber":null,"expectedRevision":1}
+
+### Create or reuse global student identifier
+POST {{baseUrl}}/api/v1/users/me/student-profile
+Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000003
+Content-Type: application/json
+
+{}
+
+### Read own student identifier
+GET {{baseUrl}}/api/v1/users/me/student-profile
+Authorization: Bearer {{userToken}}
+
+### Create teacher profile using an exact current school invitation
+POST {{baseUrl}}/api/v1/users/me/teacher-profile
+Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000004
+Content-Type: application/json
+
+{"schoolId":"{{schoolId}}","invitationId":"{{invitationId}}"}
+
+### Read own teacher identifier
+GET {{baseUrl}}/api/v1/users/me/teacher-profile
+Authorization: Bearer {{userToken}}
+
+### Create administrator profile using an exact school invitation
+POST {{baseUrl}}/api/v1/users/me/administrator-profile
+Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000005
+Content-Type: application/json
+
+{"schoolId":"{{schoolId}}","invitationId":"{{invitationId}}"}
+
+### Read own administrator identifier
+GET {{baseUrl}}/api/v1/users/me/administrator-profile
+Authorization: Bearer {{userToken}}
+
+### Internal status: profiles.status.read workload scope
+GET {{baseUrl}}/internal/v1/users/{{userId}}/status
+Authorization: Bearer {{workloadToken}}
+
+### Internal nullable contact: profiles.contact.read workload scope
+GET {{baseUrl}}/internal/v1/users/{{userId}}/contact
+Authorization: Bearer {{workloadToken}}
+
+### Internal role binding: profiles.binding.read workload scope
+GET {{baseUrl}}/internal/v1/profiles/student/{{profileId}}
+Authorization: Bearer {{workloadToken}}
+
+### Deactivate: profiles.deactivate workload and active allowlisted operator
+POST {{baseUrl}}/internal/v1/users/{{userId}}/deactivate
+Authorization: Bearer {{workloadToken}}
+X-User-Authorization: Bearer {{operatorToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000006
+Content-Type: application/json
+
+{"expectedRevision":2,"reason":"Synthetic demonstration"}
+
+### Bootstrap: profiles.bootstrap workload and active allowlisted operator
+POST {{baseUrl}}/internal/v1/users/{{userId}}/administrator-profile/bootstrap
+Authorization: Bearer {{workloadToken}}
+X-User-Authorization: Bearer {{operatorToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000007
+Content-Type: application/json
+
+{"schoolId":"{{schoolId}}"}
+
+### MCP delegated read: workload profiles.mcp.write plus independently validated user
+GET {{baseUrl}}/internal/v1/delegated/users/me
+Authorization: Bearer {{workloadToken}}
+X-User-Authorization: Bearer {{userToken}}
+
+### MCP mutation: confirmation must bind EXACT command, operation ID and fingerprint
+PUT {{baseUrl}}/internal/v1/delegated/users/me
+Authorization: Bearer {{workloadToken}}
+X-User-Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000008
+Content-Type: application/json
+
+{"firstName":"Synthetic","lastName":"User","emailAddress":null,"phoneNumber":null,"expectedRevision":2,"confirmationId":"{{confirmationId}}"}
+
+### Error example: stale revision, new operation ID
+PUT {{baseUrl}}/api/v1/users/me
+Authorization: Bearer {{userToken}}
+Idempotency-Key: 60000000-0000-0000-0000-000000000009
+Content-Type: application/json
+
+{"firstName":"Synthetic","lastName":"User","emailAddress":null,"phoneNumber":null,"expectedRevision":999999}
+
+### Error example: invisible or unknown resource
+GET {{baseUrl}}/internal/v1/profiles/student/ffffffff-ffff-ffff-ffff-ffffffffffff
+Authorization: Bearer {{workloadToken}}
+
+### Liveness
+GET {{baseUrl}}/health/live
+
+### Readiness: own schema and database availability
+GET {{baseUrl}}/health/ready
+
+### Development OpenAPI
+GET {{baseUrl}}/openapi/v1.json

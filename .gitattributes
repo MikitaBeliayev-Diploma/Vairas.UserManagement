@@ -1,0 +1,5 @@
+* text=auto
+# Keep frozen canonical DDL byte-for-byte.
+Vairas.UserManagement.Persistance/Migrations/Sql/InitialProfiles.sql -text
+database/bootstrap-roles.sql -text
+database/database-roles.sql -text
