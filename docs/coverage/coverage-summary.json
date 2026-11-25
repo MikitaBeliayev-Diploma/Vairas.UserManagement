@@ -1,0 +1,524 @@
+{
+  "service": "Vairas.UserManagement",
+  "generated": "2026-11-25",
+  "tool": "coverlet (XPlat Code Coverage) via Backend/local/coverage.py",
+  "filter": "TestCategory!=Broker (broker tests need the Service Bus emulator and run in local/test_all.py)",
+  "threshold": 70,
+  "thresholdMet": true,
+  "total": {
+    "lines": 1234,
+    "covered": 1009,
+    "branches": 848,
+    "branchesCovered": 485,
+    "linePercent": 81.77,
+    "branchPercent": 57.19
+  },
+  "assemblies": {
+    "Vairas.UserManagement": {
+      "lines": 775,
+      "covered": 588,
+      "branches": 570,
+      "branchesCovered": 258,
+      "linePercent": 75.87,
+      "branchPercent": 45.26
+    },
+    "Vairas.UserManagement.Business": {
+      "lines": 250,
+      "covered": 242,
+      "branches": 208,
+      "branchesCovered": 189,
+      "linePercent": 96.8,
+      "branchPercent": 90.87
+    },
+    "Vairas.UserManagement.Domain": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Persistance": {
+      "lines": 208,
+      "covered": 178,
+      "branches": 70,
+      "branchesCovered": 38,
+      "linePercent": 85.58,
+      "branchPercent": 54.29
+    }
+  },
+  "files": {
+    "Vairas.UserManagement.Business/BadRequestException.cs": {
+      "lines": 1,
+      "covered": 0,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 0.0,
+      "branchPercent": 100.0
+    },
+    "Security/LessonActions.cs": {
+      "lines": 61,
+      "covered": 0,
+      "branches": 88,
+      "branchesCovered": 0,
+      "linePercent": 0.0,
+      "branchPercent": 0.0
+    },
+    "Controllers/AssistantActorController.cs": {
+      "lines": 7,
+      "covered": 0,
+      "branches": 14,
+      "branchesCovered": 0,
+      "linePercent": 0.0,
+      "branchPercent": 0.0
+    },
+    "Controllers/DocumentProfileController.cs": {
+      "lines": 2,
+      "covered": 0,
+      "branches": 2,
+      "branchesCovered": 0,
+      "linePercent": 0.0,
+      "branchPercent": 0.0
+    },
+    "Controllers/NotificationBindingController.cs": {
+      "lines": 5,
+      "covered": 0,
+      "branches": 2,
+      "branchesCovered": 0,
+      "linePercent": 0.0,
+      "branchPercent": 0.0
+    },
+    "Vairas.UserManagement.Persistance/DataAccess/VairasDbContextFactory.cs": {
+      "lines": 7,
+      "covered": 0,
+      "branches": 2,
+      "branchesCovered": 0,
+      "linePercent": 0.0,
+      "branchPercent": 0.0
+    },
+    "Security/ReadPreviewDelegation.cs": {
+      "lines": 80,
+      "covered": 7,
+      "branches": 142,
+      "branchesCovered": 5,
+      "linePercent": 8.75,
+      "branchPercent": 3.52
+    },
+    "Vairas.UserManagement.Business/ServiceErrors.cs": {
+      "lines": 10,
+      "covered": 3,
+      "branches": 14,
+      "branchesCovered": 0,
+      "linePercent": 30.0,
+      "branchPercent": 0.0
+    },
+    "Vairas.UserManagement.Persistance/DatabaseExceptionTranslator.cs": {
+      "lines": 34,
+      "covered": 18,
+      "branches": 42,
+      "branchesCovered": 19,
+      "linePercent": 52.94,
+      "branchPercent": 45.24
+    },
+    "Configuration/ConfigureMessageBroker.cs": {
+      "lines": 13,
+      "covered": 7,
+      "branches": 2,
+      "branchesCovered": 0,
+      "linePercent": 53.85,
+      "branchPercent": 0.0
+    },
+    "Workers/OutboxWorker.cs": {
+      "lines": 52,
+      "covered": 32,
+      "branches": 18,
+      "branchesCovered": 7,
+      "linePercent": 61.54,
+      "branchPercent": 38.89
+    },
+    "Configuration/Options/OutboxOptionsValidator.cs": {
+      "lines": 8,
+      "covered": 6,
+      "branches": 10,
+      "branchesCovered": 5,
+      "linePercent": 75.0,
+      "branchPercent": 50.0
+    },
+    "Vairas.UserManagement.Persistance/ProfileStore.cs": {
+      "lines": 47,
+      "covered": 40,
+      "branches": 16,
+      "branchesCovered": 10,
+      "linePercent": 85.11,
+      "branchPercent": 62.5
+    },
+    "Configuration/Options/DependencyOptionsValidator.cs": {
+      "lines": 8,
+      "covered": 7,
+      "branches": 6,
+      "branchesCovered": 4,
+      "linePercent": 87.5,
+      "branchPercent": 66.67
+    },
+    "Middleware/ApiExceptionHandler.cs": {
+      "lines": 26,
+      "covered": 23,
+      "branches": 24,
+      "branchesCovered": 19,
+      "linePercent": 88.46,
+      "branchPercent": 79.17
+    },
+    "Integrations/WorkloadTokenProvider.cs": {
+      "lines": 29,
+      "covered": 26,
+      "branches": 20,
+      "branchesCovered": 14,
+      "linePercent": 89.66,
+      "branchPercent": 70.0
+    },
+    "Integrations/DependencyTransport.cs": {
+      "lines": 13,
+      "covered": 12,
+      "branches": 4,
+      "branchesCovered": 3,
+      "linePercent": 92.31,
+      "branchPercent": 75.0
+    },
+    "Controllers/InternalProfilesController.cs": {
+      "lines": 23,
+      "covered": 22,
+      "branches": 4,
+      "branchesCovered": 2,
+      "linePercent": 95.65,
+      "branchPercent": 50.0
+    },
+    "Controllers/ProfilesController.cs": {
+      "lines": 35,
+      "covered": 34,
+      "branches": 22,
+      "branchesCovered": 18,
+      "linePercent": 97.14,
+      "branchPercent": 81.82
+    },
+    "Configuration/ApiDocumentTransformer.cs": {
+      "lines": 118,
+      "covered": 117,
+      "branches": 116,
+      "branchesCovered": 99,
+      "linePercent": 99.15,
+      "branchPercent": 85.34
+    },
+    "Vairas.UserManagement.Business/BusinessException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/CommandFingerprint.cs": {
+      "lines": 9,
+      "covered": 9,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/ConflictException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/ForbiddenException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/NotFoundException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/ProfileCommandValidator.cs": {
+      "lines": 30,
+      "covered": 30,
+      "branches": 14,
+      "branchesCovered": 14,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/ProfilesService.cs": {
+      "lines": 193,
+      "covered": 193,
+      "branches": 180,
+      "branchesCovered": 175,
+      "linePercent": 100.0,
+      "branchPercent": 97.22
+    },
+    "Vairas.UserManagement.Business/ServiceUnavailableException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/UnauthorizedException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Business/UnprocessableEntityException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Program.cs": {
+      "lines": 26,
+      "covered": 26,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Workers/ServiceBusEventPublisher.cs": {
+      "lines": 19,
+      "covered": 19,
+      "branches": 2,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Security/ActorContextFactory.cs": {
+      "lines": 16,
+      "covered": 16,
+      "branches": 22,
+      "branchesCovered": 19,
+      "linePercent": 100.0,
+      "branchPercent": 86.36
+    },
+    "Security/EntryHandler.cs": {
+      "lines": 16,
+      "covered": 16,
+      "branches": 20,
+      "branchesCovered": 19,
+      "linePercent": 100.0,
+      "branchPercent": 95.0
+    },
+    "Middleware/CorrelationMiddleware.cs": {
+      "lines": 9,
+      "covered": 9,
+      "branches": 12,
+      "branchesCovered": 10,
+      "linePercent": 100.0,
+      "branchPercent": 83.33
+    },
+    "Middleware/ProblemResponses.cs": {
+      "lines": 11,
+      "covered": 11,
+      "branches": 2,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Integrations/AuthSessionClient.cs": {
+      "lines": 8,
+      "covered": 8,
+      "branches": 10,
+      "branchesCovered": 8,
+      "linePercent": 100.0,
+      "branchPercent": 80.0
+    },
+    "Integrations/ConfirmationClient.cs": {
+      "lines": 2,
+      "covered": 2,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Integrations/DependencyCorrelationHandler.cs": {
+      "lines": 7,
+      "covered": 7,
+      "branches": 2,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Integrations/SchoolAuthorityClient.cs": {
+      "lines": 2,
+      "covered": 2,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "HealthChecks/DatabaseReadiness.cs": {
+      "lines": 24,
+      "covered": 24,
+      "branches": 2,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureAuthentication.cs": {
+      "lines": 47,
+      "covered": 47,
+      "branches": 8,
+      "branchesCovered": 8,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureAuthorization.cs": {
+      "lines": 16,
+      "covered": 16,
+      "branches": 2,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureDatabase.cs": {
+      "lines": 7,
+      "covered": 7,
+      "branches": 2,
+      "branchesCovered": 1,
+      "linePercent": 100.0,
+      "branchPercent": 50.0
+    },
+    "Configuration/ConfigureDependencyInjection.cs": {
+      "lines": 6,
+      "covered": 6,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureExceptionHandling.cs": {
+      "lines": 13,
+      "covered": 13,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureHealthChecks.cs": {
+      "lines": 9,
+      "covered": 9,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureHttpClients.cs": {
+      "lines": 12,
+      "covered": 12,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureJsonSerialization.cs": {
+      "lines": 9,
+      "covered": 9,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureOpenApi.cs": {
+      "lines": 6,
+      "covered": 6,
+      "branches": 4,
+      "branchesCovered": 3,
+      "linePercent": 100.0,
+      "branchPercent": 75.0
+    },
+    "Configuration/ConfigureOptions.cs": {
+      "lines": 12,
+      "covered": 12,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Configuration/ConfigureTelemetry.cs": {
+      "lines": 15,
+      "covered": 15,
+      "branches": 4,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 50.0
+    },
+    "Configuration/Options/JwtOptionsValidator.cs": {
+      "lines": 3,
+      "covered": 3,
+      "branches": 4,
+      "branchesCovered": 2,
+      "linePercent": 100.0,
+      "branchPercent": 50.0
+    },
+    "Vairas.UserManagement.Domain/Entities/UserProfile.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Persistance/OutboxStore.cs": {
+      "lines": 33,
+      "covered": 33,
+      "branches": 4,
+      "branchesCovered": 3,
+      "linePercent": 100.0,
+      "branchPercent": 75.0
+    },
+    "Vairas.UserManagement.Persistance/PersistenceFailureException.cs": {
+      "lines": 1,
+      "covered": 1,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Persistance/DataAccess/DatabaseOptions.cs": {
+      "lines": 7,
+      "covered": 7,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Persistance/DataAccess/ModelConfiguration.cs": {
+      "lines": 71,
+      "covered": 71,
+      "branches": 6,
+      "branchesCovered": 6,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    },
+    "Vairas.UserManagement.Persistance/DataAccess/VairasDbContext.cs": {
+      "lines": 8,
+      "covered": 8,
+      "branches": 0,
+      "branchesCovered": 0,
+      "linePercent": 100.0,
+      "branchPercent": 100.0
+    }
+  }
+}
